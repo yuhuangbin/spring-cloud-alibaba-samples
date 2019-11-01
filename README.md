@@ -5,6 +5,7 @@
 * Dubbo RPC 服务调用
 * Open Feign REST 服务调用
 * Sentinel 限流熔断
+* Seata 分布式事务解决方案
 ## 项目目录介绍
 * sca-common <br>
 `项目公用模块（Dubbo Api等）`
