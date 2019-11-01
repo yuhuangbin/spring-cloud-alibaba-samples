@@ -1,4 +1,13 @@
 # spring-cloud-alibaba-samples
+## 准备环境
+* 启动 Nacos server <br>
+[Nacos Server 下载地址](https://github.com/alibaba/nacos/releases)
+>下载最新版本Nacos Server, 本地启动Nacos
+
+* 启动Seata Server <br>
+[Seata Server 下载地址](https://github.com/seata/seata/releases)
+> 下载最新版本Seata Server, 本地启动Seata
+
 ## 使用组件介绍
 * Nacos 注册中心
 * Nacos 配置中心
