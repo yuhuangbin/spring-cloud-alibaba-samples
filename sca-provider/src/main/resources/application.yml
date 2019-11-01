@@ -35,6 +35,9 @@ spring:
       # Nacos 服务发现与注册配置
       discovery:
         server-addr: 127.0.0.1:8848
+    alibaba:
+      seata:
+        tx-service-group: sca-provider-seata-tx-service-group
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

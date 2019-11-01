@@ -21,6 +21,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void add(TbUser user) {
         log.info("add user:{}", user);
+
+        user.setName("provider");
         userMapper.insert(user);
     }
 }

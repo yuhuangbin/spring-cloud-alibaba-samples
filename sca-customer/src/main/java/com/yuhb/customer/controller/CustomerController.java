@@ -23,12 +23,6 @@ public class CustomerController {
     @Autowired
     private ProviderFeignService providerFeignService;
 
-    /**
-     * Nacos默认配置 dataid : ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-     * 对应本项目即
-     * Dataid : sca-customer.properties
-     * Group : DEFAULT_GROUP
-     */
     @Value("${user.name:yuhb}")
     private String name;
 
@@ -56,10 +50,12 @@ public class CustomerController {
     }
 
     /**
-     * Nacos 动态获取 ${user.name} 配置
+     * Nacos 动态获取配置
+     * Nacos 控制台新建配置
+     * dataid : common.yaml 并添加属性 user.name user.age
      * @return
      */
-    @GetMapping("/dubbo/dynamicConfig")
+    @GetMapping("/dynamicConfig")
     public String dubboEcho() {
         return dubboEchoService.echo(String.format("my name is %s, age is %d", name, age));
     }
