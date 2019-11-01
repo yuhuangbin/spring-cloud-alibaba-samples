@@ -8,7 +8,7 @@
 * Seata 分布式事务解决方案
 ## 项目目录介绍
 * sca-common <br>
-`项目公用模块（Dubbo Api等）`
+`项目公用模块（实体类，Dubbo Api等）`
 * sca-customer 消费者
 * sca-provider 服务提供者
 
