@@ -27,9 +27,7 @@ service.vgroup_mapping.sca-provider-seata-tx-service-group=default
 service.vgroup_mapping.sca-customer-seata-tx-service-group=default
 ```
 
-> sca-provider-seata-tx-service-group 
-> sca-customer-seata-tx-service-group 
-> 为项目注册的事务分组
+> sca-provider-seata-tx-service-group 和 sca-customer-seata-tx-service-group 为项目注册的事务分组
 
 * 进入seata/conf目录，执行以下命令，将seata配置信息推送到nacos
 
@@ -39,7 +37,7 @@ service.vgroup_mapping.sca-customer-seata-tx-service-group=default
 
 * 进入 seata/conf目录，修改 registry.conf 文件
 
-```json
+```
 
 registry {
   # file 、nacos 、eureka、redis、zk、consul、etcd3、sofa
