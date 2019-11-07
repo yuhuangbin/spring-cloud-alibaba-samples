@@ -68,4 +68,12 @@
       age = #{age,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <update id="testUpdateForExists" >
+    update tb_user
+    set age = 18
+    where exists (
+        select id from tb_class where user_name = tb_user.name
+    )
+  </update>
 </mapper>

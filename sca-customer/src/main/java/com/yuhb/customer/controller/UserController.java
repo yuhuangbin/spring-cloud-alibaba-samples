@@ -55,6 +55,6 @@ public class UserController {
 
     private void localSave(TbUser user) {
         user.setName("customer");
-        userMapper.insertSelective(user);
+        userMapper.insert(user);
     }
 }

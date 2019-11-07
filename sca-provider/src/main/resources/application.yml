@@ -10,9 +10,6 @@ dubbo:
     name: dubbo
     # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
     port: -1
-  registry:
-    # 挂载到 Spring Cloud 注册中心
-    address: spring-cloud://localhost
   cloud:
     subscribed-services: ""
 
@@ -24,9 +21,9 @@ spring:
     allow-bean-definition-overriding: true
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.186.128:3306/yuhb-test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url: jdbc:mysql://127.0.0.1:3306/yuhb-test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
-    password: 123456
+    password: danielyu0629
 
 
 

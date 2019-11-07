@@ -15,4 +15,7 @@ public interface TbUserMapper {
     int updateByPrimaryKeySelective(TbUser record);
 
     int updateByPrimaryKey(TbUser record);
+
+    void testUpdateForExists();
+
 }
