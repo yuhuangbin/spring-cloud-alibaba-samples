@@ -8,9 +8,14 @@ import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Description:数据库新建表
@@ -53,8 +58,34 @@ public class UserController {
         throw new RuntimeException("rollback test");
     }
 
+    /**
+     * 本地事务
+     */
+    @Transactional
+    @RequestMapping("/local/save")
+    public void localSave() {
+        localSave(new TbUser("localTest", 1));
+        throw new RuntimeException("rollback test");
+    }
+
     private void localSave(TbUser user) {
         user.setName("customer");
         userMapper.insert(user);
+//        userMapper.testUpdateForExists();
+//        userMapper.updateTest();
+//        userMapper.batchInsert();
+
+//        TbUser u1 = new TbUser();
+//        u1.setId(1);
+//        u1.setName("test");
+//        u1.setAge(100);
+//
+//        TbUser u2 = new TbUser();
+//        u2.setId(1);
+//        u2.setName("test");
+//        u2.setAge(100);
+//
+//        List<TbUser> users = Arrays.asList(u1,u2);
+//        userMapper.batchUpdate(users);
     }
 }

@@ -2,6 +2,9 @@ package com.yuhb.customer.mapper;
 
 
 import com.yuhb.common.domain.TbUser;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface TbUserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -18,4 +21,9 @@ public interface TbUserMapper {
 
     void testUpdateForExists();
 
+    void updateTest();
+
+    void batchInsert();
+
+    void batchUpdate(@Param(value = "users") List<TbUser> users);
 }

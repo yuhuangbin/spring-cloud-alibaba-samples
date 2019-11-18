@@ -22,8 +22,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
         <lombok.version>1.16.8</lombok.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,4 +94,20 @@
             </snapshots>
         </repository>
     </repositories>-->
+
+
+
+    <repositories>
+        <repository>
+            <id>Central</id>
+            <name>Central</name>
+            <url>http://repo1.maven.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

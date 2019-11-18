@@ -76,4 +76,20 @@
         select id from tb_class where user_name = tb_user.name
     )
   </update>
+
+  <update id="updateTest" >
+    update tb_user set age = 18 where id = 1
+  </update>
+
+  <insert id="batchInsert" >
+    insert into tb_user (id, name, age
+      )
+    values (10, "10", 10),(11, "11", 11)
+  </insert>
+
+  <update id="batchUpdate" parameterType="java.util.List">
+    <foreach collection="users" item="user" separator=";">
+      update tb_user set name = #{user.name}, age = #{user.age} where id = #{user.id}
+    </foreach>
+  </update>
 </mapper>
