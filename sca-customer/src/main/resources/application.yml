@@ -22,6 +22,7 @@ spring:
       # Nacos 服务注册发现
       discovery:
         server-addr: 127.0.0.1:8848
+        #group: business_group
     alibaba:
       seata:
       # Seata 事务组名称，对应file.conf文件中 vgroup_mapping.sca-customer-seata-tx-service-group

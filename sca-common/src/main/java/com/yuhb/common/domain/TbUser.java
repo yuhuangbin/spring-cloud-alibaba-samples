@@ -20,6 +20,9 @@ public class TbUser implements Serializable{
      */
     private Integer age;
 
+    public TbUser() {
+    }
+
     public TbUser(String name, Integer age) {
         this.name = name;
         this.age = age;
