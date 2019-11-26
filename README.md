@@ -66,7 +66,7 @@ config {
 
 * 进入seata/bin目录，执行以下命令启动seata-server
 
-```nohup sh seata-server.sh -m & ```
+```nohup sh seata-server.sh -m file & ```
 
 * 初始化业务数据库undo_log表
 ```sql
