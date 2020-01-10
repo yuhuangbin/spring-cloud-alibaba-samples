@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: sca-gateway
+
+  cloud:
+    nacos:
+      server-addr: 192.168.2.16
+      config:
+        shared-configs:
+          - data-id: gateway.properties
+        shared-dataids: gateway.properties

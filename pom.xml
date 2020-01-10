@@ -7,11 +7,12 @@
         <module>sca-customer</module>
         <module>sca-provider</module>
         <module>sca-common</module>
+        <module>sca-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
+        <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yuhb</groupId>
@@ -22,7 +23,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
         <lombok.version>1.16.8</lombok.version>
 
@@ -97,7 +98,7 @@
 
 
 
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>Central</id>
             <name>Central</name>
@@ -109,5 +110,5 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
 </project>

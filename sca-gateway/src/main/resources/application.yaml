@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        shared-configs:
+          - dataId: gateway.json
+
