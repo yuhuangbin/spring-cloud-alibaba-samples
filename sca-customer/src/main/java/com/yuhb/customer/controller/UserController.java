@@ -2,6 +2,7 @@ package com.yuhb.customer.controller;
 
 import com.yuhb.common.domain.TbUser;
 import com.yuhb.common.dubbo.api.UserService;
+import com.yuhb.customer.feign.ProviderFeignService;
 import com.yuhb.customer.mapper.TbUserMapper;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
@@ -37,6 +38,9 @@ public class UserController {
     @Autowired
     private TbUserMapper userMapper;
 
+    @Autowired
+    private ProviderFeignService providerFeignService;
+
     /**
      * seata 全局事务控制
      * @param user
@@ -49,7 +53,7 @@ public class UserController {
         localSave(user);
 
         // call provider save
-        userService.add(user);
+        providerFeignService.add(user.getName());
 
         // test seata globalTransactional
         throw new RuntimeException("rollback test");

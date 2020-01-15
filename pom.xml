@@ -23,8 +23,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.0.BUILD-SNAPSHOT</spring-cloud-alibaba.version>
         <lombok.version>1.16.8</lombok.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

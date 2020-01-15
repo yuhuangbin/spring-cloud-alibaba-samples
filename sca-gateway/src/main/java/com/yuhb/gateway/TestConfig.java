@@ -1,9 +1,6 @@
 package com.yuhb.gateway;
 
-import lombok.Data;
-import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.yaml.snakeyaml.Yaml;
 
 import java.util.List;
 import java.util.Map;
@@ -127,30 +124,4 @@ public class TestConfig {
                 '}';
     }
 
-    public static void main(String[] args) {
-        String json = "{\n" +
-                "    \"test\" : {\n" +
-                "        \"name\" : \"test\",\n" +
-                "        \"list\" : [\n" +
-                "            {\n" +
-                "                \"name\" :\"listname\",\n" +
-                "                \"age\":1\n" +
-                "            },\n" +
-                "            {\n" +
-                "                \"name\" :\"listname2\",\n" +
-                "                \"age\":2\n" +
-                "            }\n" +
-                "        ],\n" +
-                "        \"metadata\" : {\n" +
-                "            \"intKey\" : 123,\n" +
-                "            \"booleanKey\" : true\n" +
-                "        }\n" +
-                "    }\n" +
-                "}";
-        Yaml yaml = new Yaml();
-        Iterable<Object> objects = yaml.loadAll(json);
-        for (Object o: objects) {
-            System.out.println(o);
-        }
-    }
 }

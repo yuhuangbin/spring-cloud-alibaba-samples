@@ -12,19 +12,32 @@ dubbo:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://127.0.0.1:3306/yuhb-test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
     password: danielyu0629
-
   cloud:
-    alibaba:
-      seata:
-      # Seata 事务组名称，对应file.conf文件中 vgroup_mapping.sca-customer-seata-tx-service-group
-        tx-service-group: sca-customer-seata-tx-service-group
+    loadbalancer:
+      ribbon:
+        enabled: false
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 
+seata:
+  tx-service-group: sca-customer-seata-tx-service-group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.2.16
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.2.16
 
+
+loadbalancer:
+  client:
+    name: sca-provider

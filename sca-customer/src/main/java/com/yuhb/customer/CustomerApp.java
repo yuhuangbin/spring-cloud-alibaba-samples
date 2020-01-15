@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * Created by yu.hb on 2019-10-30
  */
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients // 扫描 @FeignClient 注解
 @MapperScan("com.yuhb.customer.mapper")

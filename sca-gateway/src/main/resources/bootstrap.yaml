@@ -8,4 +8,3 @@ spring:
       config:
         shared-configs:
           - data-id: gateway.properties
-        shared-dataids: gateway.properties

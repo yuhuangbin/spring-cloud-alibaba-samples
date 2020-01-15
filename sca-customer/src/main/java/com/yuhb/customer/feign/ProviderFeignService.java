@@ -11,4 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ProviderFeignService {
     @GetMapping("/feign/echo")
     String feignEcho(@RequestParam("name") String name);
+
+    @GetMapping("/feign/user/add")
+    String add(@RequestParam("name") String name) ;
 }

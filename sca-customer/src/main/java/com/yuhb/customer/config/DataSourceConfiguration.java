@@ -21,7 +21,7 @@ import java.io.IOException;
  * author: yu.hb
  * Date: 2019-11-01
  */
-@Configuration
+//@Configuration
 @EnableConfigurationProperties({MybatisProperties.class})
 public class DataSourceConfiguration {
 
