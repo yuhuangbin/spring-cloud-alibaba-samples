@@ -1,13 +1,11 @@
 package com.yuhb.customer.controller;
 
 import com.yuhb.common.domain.TbUser;
-import com.yuhb.common.dubbo.api.UserService;
 import com.yuhb.customer.feign.ProviderFeignService;
 import com.yuhb.customer.mapper.TbUserMapper;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,9 +29,6 @@ CREATE TABLE `tb_user` (
 @RestController
 @Slf4j
 public class UserController {
-
-    @Reference(timeout = 10000)
-    private UserService userService;
 
     @Autowired
     private TbUserMapper userMapper;

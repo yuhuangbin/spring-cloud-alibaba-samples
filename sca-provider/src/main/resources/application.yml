@@ -26,31 +26,22 @@ spring:
     username: root
     password: danielyu0629
 
-
-
-
   cloud:
     nacos:
       # Nacos 服务发现与注册配置
       discovery:
-        server-addr: 192.168.2.16:80
+        server-addr: 127.0.0.1:8848
+      user-name: nacos
+      password: nacos
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 
 seata:
-  tx-service-group: sca-provider-seata-tx-service-group
-  registry:
-    type: nacos
-    nacos:
-      server-addr: 192.168.2.16
-  config:
-    type: nacos
-    nacos:
-      server-addr: 192.168.2.16
-
-loadbalancer:
-  client:
-    name: aa
-
+  tx-service-group: sca-provider
+  service:
+    vgroup-mapping:
+      sca-provider: default
+    grouplist:
+      default: 127.0.0.1:8091

@@ -25,17 +25,10 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- Dubbo Spring Cloud -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-dubbo</artifactId>
-        </dependency>
-
         <!-- Seata -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-            <version>2.2.0.BUILD-SNAPSHOT</version>
         </dependency>
 
 

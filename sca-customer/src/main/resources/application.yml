@@ -19,25 +19,16 @@ spring:
   cloud:
     loadbalancer:
       ribbon:
-        enabled: false
-
+        enabled: true
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 
 seata:
-  tx-service-group: sca-customer-seata-tx-service-group
-  registry:
-    type: nacos
-    nacos:
-      server-addr: 192.168.2.16
-  config:
-    type: nacos
-    nacos:
-      server-addr: 192.168.2.16
-
-
-loadbalancer:
-  client:
-    name: sca-provider
+  tx-service-group: sca-customer
+  service:
+    vgroup-mapping:
+      sca-customer: default
+    grouplist:
+      default: 127.0.0.1:8091
