@@ -32,3 +32,12 @@ seata:
       sca-customer: default
     grouplist:
       default: 127.0.0.1:8091
+
+sca-provider:
+  ribbon:
+#    ConnectTimeout: 2000
+#    ReadTimeout: 5000
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 0
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+

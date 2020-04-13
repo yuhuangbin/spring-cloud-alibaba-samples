@@ -1,3 +1,4 @@
+/*
 package com.yuhb.customer.controller;
 
 import com.yuhb.common.domain.TbUser;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+*/
 /**
  * Description:数据库新建表
  *
@@ -25,7 +27,8 @@ CREATE TABLE `tb_user` (
 
  * author: yu.hb
  * Date: 2019-11-01
- */
+ *//*
+
 @RestController
 @Slf4j
 public class UserController {
@@ -36,10 +39,12 @@ public class UserController {
     @Autowired
     private ProviderFeignService providerFeignService;
 
-    /**
+    */
+/**
      * seata 全局事务控制
      * @param user
-     */
+     *//*
+
     @PostMapping("/seata/user/add")
     @GlobalTransactional(rollbackFor = Exception.class) // 开启全局事务
     public void add(@RequestBody TbUser user) {
@@ -54,9 +59,11 @@ public class UserController {
         throw new RuntimeException("rollback test");
     }
 
-    /**
+    */
+/**
      * 本地事务
-     */
+     *//*
+
     @Transactional
     @RequestMapping("/local/save")
     public void localSave() {
@@ -66,6 +73,7 @@ public class UserController {
 
     private void localSave(TbUser user) {
         user.setName("customer");
+        user.setAge(1);
         userMapper.insert(user);
 //        userMapper.testUpdateForExists();
 //        userMapper.updateTest();
@@ -85,3 +93,4 @@ public class UserController {
 //        userMapper.batchUpdate(users);
     }
 }
+*/

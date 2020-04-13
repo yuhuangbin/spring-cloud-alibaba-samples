@@ -4,7 +4,10 @@ spring:
 
   cloud:
     nacos:
-      server-addr: 192.168.2.16
+      username: nacos
+      password: nacos
+      server-addr: 127.0.0.1:8848
       config:
         shared-configs:
           - data-id: gateway.properties
+

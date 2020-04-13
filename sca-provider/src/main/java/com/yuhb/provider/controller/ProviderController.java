@@ -23,7 +23,7 @@ public class ProviderController {
 
     @GetMapping("/feign/user/add")
     public String add(String name) {
-        tbUserMapper.insert(new TbUser(name,1));
+        tbUserMapper.insert(new TbUser("provider",2));
         return "success";
     }
 }

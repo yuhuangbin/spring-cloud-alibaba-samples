@@ -1,7 +1,7 @@
 spring:
   cloud:
-    nacos:
-      config:
-        shared-configs:
-          - dataId: gateway.json
+    gateway:
+      discovery:
+        locator:
+          enabled: true
 
