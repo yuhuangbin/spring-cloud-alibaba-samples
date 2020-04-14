@@ -30,7 +30,7 @@ spring:
     nacos:
       # Nacos 服务发现与注册配置
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.0.50:8848
       user-name: nacos
       password: nacos
 
@@ -44,4 +44,4 @@ seata:
     vgroup-mapping:
       sca-provider: default
     grouplist:
-      default: 127.0.0.1:8091
+      default: 192.168.0.50:8091

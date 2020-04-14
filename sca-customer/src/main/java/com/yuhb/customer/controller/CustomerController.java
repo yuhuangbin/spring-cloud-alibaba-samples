@@ -1,7 +1,9 @@
 package com.yuhb.customer.controller;
 
-import com.yuhb.customer.feign.ProviderFeign2;
-import com.yuhb.customer.feign.ProviderFeignService;
+import com.yuhb.common.dubbo.api.DubboEchoService;
+import com.yuhb.customer.feign.ProviderFeignService2;
+import com.yuhb.customer.feign.ProviderFeignService1;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,10 +19,13 @@ public class CustomerController {
 
 
     @Autowired
-    private ProviderFeignService providerFeignService;
+    private ProviderFeignService1 providerFeignService1;
 
     @Autowired
-    private ProviderFeign2 providerFeign2;
+    private ProviderFeignService2 providerFeignService2;
+
+    @Reference(timeout = 5000, async = true)
+    private DubboEchoService dubboEchoService;
 
     @Value("${user.name:yuhb}")
     private String name;
@@ -35,6 +40,16 @@ public class CustomerController {
      */
     @GetMapping("/feign/echo")
     public String feignEcho(String name) {
-        return providerFeign2.feignEcho(name);
+        return providerFeignService2.feignEcho(name);
+    }
+
+    /**
+     * dubbo 调用
+     * @param name
+     * @return
+     */
+    @GetMapping("/dubbo/echo")
+    public String dubboEcho(String name) {
+        return dubboEchoService.echo(name);
     }
 }

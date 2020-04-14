@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2020/3/17
  */
 @FeignClient(contextId = "sca-provider1", name = "sca-provider",configuration = ProviderFeign2Configuration.class)
-public interface ProviderFeign2 {
+public interface ProviderFeignService2 {
 
     @GetMapping("/feign/echo")
     String feignEcho(@RequestParam("name") String name);

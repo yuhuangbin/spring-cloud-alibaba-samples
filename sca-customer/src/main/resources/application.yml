@@ -2,9 +2,6 @@ server:
   port: 18081
 
 dubbo:
-  registry:
-    # 挂载到 Spring Cloud 注册中心
-    address: spring-cloud://localhost
   cloud:
     subscribed-services: sca-provider
   consumer:
@@ -31,13 +28,14 @@ seata:
     vgroup-mapping:
       sca-customer: default
     grouplist:
-      default: 127.0.0.1:8091
+      default: 192.168.0.50:8091
 
 sca-provider:
   ribbon:
-#    ConnectTimeout: 2000
-#    ReadTimeout: 5000
+    ConnectTimeout: 2000
+    ReadTimeout: 5000
     MaxAutoRetries: 0
     MaxAutoRetriesNextServer: 0
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+    #listOfServers: localhost:18080
 
