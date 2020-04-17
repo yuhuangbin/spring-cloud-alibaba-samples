@@ -20,50 +20,6 @@
 [Seata Server 下载地址](https://github.com/seata/seata/releases)
 > 下载最新版本Seata Server, 本地启动Seata
 
-* 进入seata/conf，修改 `nacos-config.txt `配置
-
-```
-service.vgroup_mapping.sca-provider-seata-tx-service-group=default
-service.vgroup_mapping.sca-customer-seata-tx-service-group=default
-```
-
-> sca-provider-seata-tx-service-group 和 sca-customer-seata-tx-service-group 为项目注册的事务分组
-
-* 进入seata/conf目录，执行以下命令，将seata配置信息推送到nacos
-
-`sh nacos-config.sh 127.0.0.1`
-
-> 127.0.0.1 为nacos ip地址
-
-* 进入 seata/conf目录，修改 registry.conf 文件
-
-```
-
-registry {
-  # file 、nacos 、eureka、redis、zk、consul、etcd3、sofa
-  type = "nacos"
-
-  nacos {
-    serverAddr = "127.0.0.1"
-    namespace = ""
-    cluster = "default"
-  }
-}
-
-config {
-  # file、nacos 、apollo、zk、consul、etcd3
-  type = "nacos"
-
-  nacos {
-    serverAddr = "127.0.0.1"
-    namespace = ""
-  }
- 
-}
-
-```
-
-
 * 进入seata/bin目录，执行以下命令启动seata-server
 
 ```nohup sh seata-server.sh -m file & ```
