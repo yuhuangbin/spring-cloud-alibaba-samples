@@ -2,12 +2,31 @@ spring:
   application:
     name: sca-gateway
 
+  redis:
+    host: 192.168.2.13
+    port: 6379
+    timeout: 5000
+    database: 1
+
+
   cloud:
     nacos:
       username: nacos
       password: nacos
-      server-addr: 127.0.0.1:8848
-      config:
-        shared-configs:
-          - data-id: gateway.properties
+      server-addr: 192.168.0.50:8848
+
+    gateway:
+      routes:
+        - id: sca-customer
+          uri: lb://sca-customer
+          predicates:
+            - Path=/sca-customer/**
+          filters:
+            - StripPrefix=1
+
+    sentinel:
+      datasource.ds1.file:
+        file: 'classpath: sentinelConfig/gateway.json'
+        rule-type: gw-flow
+        data-type: json
 

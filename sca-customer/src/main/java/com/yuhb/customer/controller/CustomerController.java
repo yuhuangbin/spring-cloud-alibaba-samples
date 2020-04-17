@@ -33,6 +33,9 @@ public class CustomerController {
     @Value("${user.age:18}")
     private Integer age;
 
+    @Value("${server.port}")
+    private Integer port;
+
     /**
      * Open Feign 方式调用
      * @param name
@@ -51,5 +54,10 @@ public class CustomerController {
     @GetMapping("/dubbo/echo")
     public String dubboEcho(String name) {
         return dubboEchoService.echo(name);
+    }
+
+    @GetMapping("/sca-customer/port")
+    public Integer port() {
+        return port;
     }
 }
