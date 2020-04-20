@@ -56,7 +56,7 @@ public class CustomerController {
         return dubboEchoService.echo(name);
     }
 
-    @GetMapping("/sca-customer/port")
+    @GetMapping("/port")
     public Integer port() {
         return port;
     }
