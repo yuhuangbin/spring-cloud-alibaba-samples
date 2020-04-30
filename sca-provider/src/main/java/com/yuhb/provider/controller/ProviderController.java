@@ -2,6 +2,7 @@ package com.yuhb.provider.controller;
 
 import com.yuhb.common.domain.TbUser;
 import com.yuhb.provider.mapper.TbUserMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by yu.hb on 2019-10-30
  */
 @RestController
+@Slf4j
 public class ProviderController {
 
     @Autowired
@@ -22,7 +24,7 @@ public class ProviderController {
 
     @GetMapping("/feign/echo")
     public String feignEcho(String name) {
-        return "feignEcho() hi " + name;
+        return "Call By OpenFeign Request Message: " + name;
     }
 
     @GetMapping("/feign/user/add")
@@ -34,5 +36,10 @@ public class ProviderController {
     @GetMapping("/port")
     public Integer port() {
         return port;
+    }
+
+    @GetMapping("/log")
+    public void log() {
+        log.info("This is a log test");
     }
 }

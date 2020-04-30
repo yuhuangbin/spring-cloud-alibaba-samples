@@ -24,7 +24,7 @@ public class CustomerController {
     @Autowired
     private ProviderFeignService2 providerFeignService2;
 
-    @Reference(timeout = 5000, async = true)
+    @Reference(timeout = 5000)
     private DubboEchoService dubboEchoService;
 
     @Value("${user.name:yuhb}")
